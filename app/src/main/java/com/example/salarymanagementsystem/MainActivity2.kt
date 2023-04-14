@@ -15,5 +15,17 @@ class MainActivity2 : AppCompatActivity() {
             val intent = Intent(this, MainActivity3::class.java)
             startActivity(intent)
         }
+
+        val salaryGenBtn = findViewById<Button>(R.id.salaryGenBtn)
+        salaryGenBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity5::class.java)
+            startActivity(intent)
+        }
+
+        val salaryDisplay = findViewById<Button>(R.id.salaryDisplay)
+        salaryDisplay.setOnClickListener {
+            val intent = Intent(this, MainActivity7::class.java)
+            startActivity(intent)
+        }
     }
 }

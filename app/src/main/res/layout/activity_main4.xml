@@ -20,14 +20,19 @@
             android:textSize="28sp"
             android:layout_marginTop="10dp" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="260dp"
+            app:srcCompat="@drawable/image4" />
+
         <EditText
-            android:id="@+id/empCode"
+            android:id="@+id/empId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="15dp"
-            android:hint="Enter employee code" />
+            android:hint="Enter employee id" />
 
         <EditText
             android:id="@+id/empName"
@@ -54,7 +59,11 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
-            android:inputType="date"
+
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:hint="Enter employee's Date of Birth" />
 
         <EditText
@@ -64,6 +73,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
+            android:inputType="textMultiLine"
             android:hint="Enter employee address" />
 
         <EditText
@@ -87,48 +97,16 @@
             android:hint="Enter employee mobile number" />
 
         <EditText
-            android:id="@+id/empAadharNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="2dp"
-            android:hint="Enter employee aadhar number" />
-
-        <EditText
-            android:id="@+id/empPanNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="2dp"
-            android:hint="Enter employee PAN number" />
-
-        <EditText
-            android:id="@+id/empDrivingLiscenceNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="2dp"
-            android:hint="Enter employee driving liscence number" />
-
-        <EditText
-            android:id="@+id/empPassportNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="2dp"
-            android:hint="Enter employee passport number" />
-
-        <EditText
             android:id="@+id/empDateOfJoining"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:hint="Enter employee Date of Joining" />
 
         <EditText
@@ -138,6 +116,10 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:hint="Enter employee Date of Leaving" />
 
         <Spinner
@@ -164,6 +146,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
+            android:inputType="number"
             android:hint="Enter employee basic salary" />
 
         <EditText
@@ -173,6 +156,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
+            android:inputType="number"
             android:hint="Enter employee Dearness Allowance" />
 
         <EditText
@@ -182,6 +166,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
+            android:inputType="number"
             android:hint="Enter employee Traveling Allowance" />
 
         <EditText
@@ -190,6 +175,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:inputType="number"
             android:layout_marginTop="2dp"
             android:hint="Enter employee House Rental Allowance" />
 
@@ -197,19 +183,11 @@
             android:id="@+id/empOtherAllowance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="2dp"
             android:hint="Enter employee Other Allowance" />
-
-        <EditText
-            android:id="@+id/empIncomeTax"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="2dp"
-            android:hint="Enter employee Income Tax" />
 
         <Button
             android:id="@+id/btnSubmit"
