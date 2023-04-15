@@ -47,7 +47,7 @@ class MainActivity13 : AppCompatActivity() {
         val view = findViewById<LinearLayout>(R.id.view)
 
         bottomNav = findViewById(R.id.bottomNav)
-//        title = "Home"
+        title = "Home"
 
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {

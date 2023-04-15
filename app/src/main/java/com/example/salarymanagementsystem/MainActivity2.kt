@@ -17,7 +17,14 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        val quick = findViewById<Button>(R.id.quick)
+        quick.setOnClickListener {
+            val myintent = Intent(this, MainActivity13::class.java)
+            startActivity(myintent)
+        }
+
         bottomNavigationView = findViewById(R.id.bottomNav)
+        title = "Home"
 
         bottomNavigation(bottomNavigationView)
 
@@ -42,12 +49,6 @@ class MainActivity2 : AppCompatActivity() {
         val salaryExit = findViewById<Button>(R.id.salaryExit)
         salaryExit.setOnClickListener {
             exit()
-        }
-
-        val quick = findViewById<Button>(R.id.quick)
-        quick.setOnClickListener{
-            val intent = Intent(this, MainActivity13::class.java)
-            startActivity(intent)
         }
     }
 
@@ -84,8 +85,8 @@ class MainActivity2 : AppCompatActivity() {
 
     fun exit() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Confirm Exit")
-            .setMessage("Are you sure you want to exit ?")
+        builder.setTitle("Exit Alert")
+            .setMessage("Are you sure, you want to exit ?")
             .setCancelable(true)
             // .setMessage("this is alert")
             .setIcon(android.R.drawable.ic_dialog_alert)
@@ -93,7 +94,7 @@ class MainActivity2 : AppCompatActivity() {
 
         //performing positive action
         builder.setPositiveButton("Yes") { dialogInterface, which ->
-            finishAffinity()
+            finish()
         }
 
         //performing negative action
