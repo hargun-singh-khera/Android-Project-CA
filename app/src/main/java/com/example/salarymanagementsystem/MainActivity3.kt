@@ -1,16 +1,23 @@
 package com.example.salarymanagementsystem
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity3 : AppCompatActivity() {
+    val fileName = "employeeDetails"
+    lateinit var sharedPreference: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+
+        sharedPreference=getSharedPreferences(fileName, Context.MODE_PRIVATE)
 
         val addEmpBtn = findViewById<Button>(R.id.addEmpBtn)
         val backToMainMenuBtn = findViewById<Button>(R.id.backToMainMenuBtn)
@@ -40,7 +47,9 @@ class MainActivity3 : AppCompatActivity() {
         }
 
         deleteEmpBtn.setOnClickListener {
-
+            val delDetails = MainActivity4()
+            delDetails.delEmployeeDetails(sharedPreference)
+            Toast.makeText(this, "Succees", Toast.LENGTH_SHORT).show()
         }
 
     }

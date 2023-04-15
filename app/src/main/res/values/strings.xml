@@ -15,6 +15,8 @@
     <string name="del_emp_details">Delete Employee Details</string>
     <string name="back_to_main_menu">Back to Main Menu</string>
     <string name="employee_master_form"><u>Employee Master Form</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

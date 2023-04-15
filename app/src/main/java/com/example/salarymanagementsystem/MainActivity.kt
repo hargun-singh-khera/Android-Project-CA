@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.nextBtn)
         btnNext.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
+            val intent = Intent(this, MainActivity10::class.java)
             startActivity(intent)
         }
     }

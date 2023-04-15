@@ -1,9 +1,11 @@
 package com.example.salarymanagementsystem
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 
 class MainActivity6 : AppCompatActivity() {
@@ -51,6 +53,12 @@ class MainActivity6 : AppCompatActivity() {
         empOADisplay = findViewById(R.id.empOADisplay)
 
         getEmployeeDetails()
+
+        val backToEmployeeMasterMainMenuBtn = findViewById<Button>(R.id.backToEmployeeMasterMainMenuBtn)
+        backToEmployeeMasterMainMenuBtn.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
+        }
     }
 
     fun getEmployeeDetails() {

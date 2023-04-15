@@ -80,6 +80,42 @@ class MainActivity4 : AppCompatActivity() {
         }
 
 
+       DOJSpinner()
+       DOLSpinner()
+
+
+        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        btnSubmit.setOnClickListener {
+            if (!empMobileNumber.text.toString().isEmpty()) {
+                if (empMobileNumber.length()<10 || empMobileNumber.length()>10) {
+                    Toast.makeText(this, "Please enter a valid mobile number", Toast.LENGTH_SHORT).show()
+                }
+            }
+            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+            saveEmployeeDetails()
+        }
+
+
+        isEditable = intent.getBooleanExtra("isEditable", false)
+        if (isEditable) {
+            getEmployeeDetails()
+        }
+
+    }
+
+     fun getDatePicker(myEditText: EditText) {
+        cal = Calendar.getInstance()
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
+
+        val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myEditText.setText("$dayOfMonth/${month+1}/$year")
+        }, year, month, day)
+        datePicker.show()
+    }
+
+    fun DOJSpinner() {
         val department = arrayOf("Select an employee department","Accounts","Production","Purchase","Sale","Marketing","Information Technology","Research & Development")
         optionForDepartment=""
 
@@ -99,8 +135,9 @@ class MainActivity4 : AppCompatActivity() {
                 }
             }
         }
+    }
 
-
+    fun DOLSpinner() {
         val designation = arrayOf("Select an employee designation","Assistant Manager", "Senior Manager","Accountant","Account Manager","Software Engineer", "Data Entry Operator", "Programmer", "Clerk", "Labour")
         optionForDesignation=""
 
@@ -121,38 +158,8 @@ class MainActivity4 : AppCompatActivity() {
                 }
             }
         }
-
-
-
-        val btnSubmit = findViewById<Button>(R.id.btnSubmit)
-        btnSubmit.setOnClickListener {
-            if (!empMobileNumber.text.toString().isEmpty()) {
-                if (empMobileNumber.length()<10 || empMobileNumber.length()>10) {
-                    Toast.makeText(this, "Please enter a valid mobile number", Toast.LENGTH_SHORT).show()
-                }
-            }
-            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
-            saveEmployeeDetails()
-        }
-
-
-        isEditable = intent.getBooleanExtra("isEditable", false)
-        if (isEditable) {
-            getEmployeeDetails()
-        }
     }
 
-     fun getDatePicker(myEditText: EditText) {
-        cal = Calendar.getInstance()
-        val year = cal.get(Calendar.YEAR)
-        val month = cal.get(Calendar.MONTH)
-        val day = cal.get(Calendar.DAY_OF_MONTH)
-
-        val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-            myEditText.setText("$dayOfMonth/${month+1}/$year")
-        }, year, month, day)
-        datePicker.show()
-    }
 
     fun saveEmployeeDetails() {
         val empId = empId.text.toString()
@@ -189,6 +196,7 @@ class MainActivity4 : AppCompatActivity() {
         edit.putString("EmpTravellingAllowance", empTravellingAllowance)
         edit.putString("EmpRentalAllowance", empRentalAllowance)
         edit.putString("EmpOtherAllowance", empOtherAllowance)
+
         edit.apply()
     }
 
@@ -208,34 +216,14 @@ class MainActivity4 : AppCompatActivity() {
         empTravellingAllowance.setText(sharedPreference.getString("EmpTravellingAllowance", ""))
         empRentalAllowance.setText(sharedPreference.getString("EmpRentalAllowance", ""))
         empOtherAllowance.setText(sharedPreference.getString("EmpOtherAllowance", ""))
-    }
-
-    fun delEmployeeDetails() {
-//        sharedPreference=getSharedPreferences(fileName, Context.MODE_PRIVATE)
-//        empId.setText("Hello")
-//        val empId = empId.text.toString()
-//        val edit=sharedPreference.edit()
-//        edit.putString("EmpID", empId)
-//        edit.remove("EmpID")
-//        edit.remove("EmpName")
-//        edit.remove("EmpFatherName")
-//        edit.remove("EmpDOB")
-//        edit.remove("EmpAddress")
-//        edit.remove("EmpEmail")
-//        edit.remove("EmpMobileNumber")
-//        edit.remove("EmpDateOfJoining")
-//        edit.remove("EmpDateOfLeaving")
-//        edit.remove("Department")
-//        edit.remove("Designation")
-//        edit.remove("EmpBasicSalary")
-//        edit.remove("EmpDearnessAllowance")
-//        edit.remove("EmpTravellingAllowance")
-//        edit.remove("EmpRentalAllowance")
-//        edit.remove("EmpOtherAllowance")
-//        edit.apply()
 
     }
 
-
+    fun delEmployeeDetails(sharedPreference: SharedPreferences) {
+        val edit = sharedPreference.edit()
+        edit.clear()
+        edit.apply()
+        finish()
+    }
 
 }
