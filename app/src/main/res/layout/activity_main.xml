@@ -29,23 +29,23 @@
         android:text="@string/next"
         app:cornerRadius="25dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="30dp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="@string/developed_by"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:layout_marginTop="18dp"
-            android:textSize="20sp" />
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:text="@string/developed_by"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="18dp"-->
+<!--            android:textSize="20sp" />-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
 
 
