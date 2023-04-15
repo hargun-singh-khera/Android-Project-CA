@@ -42,8 +42,8 @@ class MainActivity9 : AppCompatActivity() {
         name = findViewById(R.id.etName)
         pass = findViewById(R.id.etEmail)
         save = findViewById(R.id.btnsave)
-        clear = findViewById(R.id.btnEdit)
-        get = findViewById(R.id.btnGet)
+//        clear = findViewById(R.id.btnEdit)
+//        get = findViewById(R.id.btnGet)
 
 
 
@@ -61,11 +61,11 @@ class MainActivity9 : AppCompatActivity() {
 
 
         //Date picker
-        btnDatePicker = findViewById(R.id.btn1)
+//        btnDatePicker = findViewById(R.id.btn1)
         txtDate = findViewById(R.id.et1)
 
 
-        btnDatePicker.setOnClickListener {
+        txtDate.setOnClickListener {
             val c = Calendar.getInstance()
             mYear = c[Calendar.YEAR]
             mMonth = c[Calendar.MONTH]

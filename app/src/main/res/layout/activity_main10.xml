@@ -6,12 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
+    android:background="@drawable/bg"
     android:gravity="center"
     tools:context=".MainActivity10">
 
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="362dp"
+        app:srcCompat="@drawable/log" />
+
     <Button
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/start"
         android:layout_width="wrap_content"
+        app:cornerRadius="25dp"
         android:layout_height="wrap_content"
         android:text="Login / Signup" />
 
@@ -19,6 +30,8 @@
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cornerRadius="25dp"
+        android:layout_marginBottom="20dp"
         android:text="Sign Out" />
 
 </LinearLayout>

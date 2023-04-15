@@ -3,6 +3,7 @@ package com.example.salarymanagementsystem
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -60,18 +61,21 @@ class MainActivity5 : AppCompatActivity() {
     }
 
     fun saveDetails() {
-        val salaryMonth = optionSelectedForMonth
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val salaryMonth = optionSelectedForMonth
 
-        var leaveWithoutPayDay = leaveWithoutPayDays.text.toString()
-        val edit=sharedPreference.edit()
+            var leaveWithoutPayDay = leaveWithoutPayDays.text.toString()
+            val edit=sharedPreference.edit()
 
-        if (leaveWithoutPayDays.text.isEmpty()) {
-            leaveWithoutPayDay="0"
+            if (leaveWithoutPayDays.text.isEmpty()) {
+                leaveWithoutPayDay="0"
+                edit.putString("LeaveWithoutPayDays", leaveWithoutPayDay)
+            }
+
+            edit.putString("SalaryMonth", salaryMonth)
             edit.putString("LeaveWithoutPayDays", leaveWithoutPayDay)
+            edit.apply()
         }
 
-        edit.putString("SalaryMonth", salaryMonth)
-        edit.putString("LeaveWithoutPayDays", leaveWithoutPayDay)
-        edit.apply()
     }
 }

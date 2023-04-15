@@ -18,7 +18,6 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_main2)
 
         bottomNavigationView = findViewById(R.id.bottomNav)
-        title = "Home"
 
         bottomNavigation(bottomNavigationView)
 
@@ -44,6 +43,12 @@ class MainActivity2 : AppCompatActivity() {
         salaryExit.setOnClickListener {
             exit()
         }
+
+        val quick = findViewById<Button>(R.id.quick)
+        quick.setOnClickListener{
+            val intent = Intent(this, MainActivity13::class.java)
+            startActivity(intent)
+        }
     }
 
     fun bottomNavigation(bottomNavigationView: BottomNavigationView) {
@@ -60,7 +65,7 @@ class MainActivity2 : AppCompatActivity() {
                     true
                 }
                 R.id.git -> {
-                    var url = "https://github.com/abhikritimoti/Salary-Management-System.git"
+                    var url = "https://github.com/hargun-singh-khera/Salary-Management-System-Android.git"
                     val intent = Intent(Intent.ACTION_VIEW)
                     intent.setDataAndType(Uri.parse(url), "text/plain")
                     val choose = Intent.createChooser(intent, "Share URL")
@@ -79,8 +84,8 @@ class MainActivity2 : AppCompatActivity() {
 
     fun exit() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Exit Alert")
-            .setMessage("Are you sure, you want to exit ?")
+        builder.setTitle("Confirm Exit")
+            .setMessage("Are you sure you want to exit ?")
             .setCancelable(true)
             // .setMessage("this is alert")
             .setIcon(android.R.drawable.ic_dialog_alert)
@@ -88,7 +93,7 @@ class MainActivity2 : AppCompatActivity() {
 
         //performing positive action
         builder.setPositiveButton("Yes") { dialogInterface, which ->
-            finish()
+            finishAffinity()
         }
 
         //performing negative action
